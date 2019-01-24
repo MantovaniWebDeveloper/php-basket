@@ -4,8 +4,6 @@
   $arrayNumeri = [0,1,2,3,4,5,6,7,8,9];
   $legaBasket = [];
 
-    echo "ciao";
-    echo rand(1,10);
 
  function generaCodice($arrayLettere,$arrayNumeri){
 
@@ -14,11 +12,19 @@
     $arrayNumeriLunghezza = count($arrayNumeri) -1;
 
     for ($i=0; $i <3 ; $i++) {
-      $mischiaArray = rand (1,23);
-      $arrayCodice = $arrayLettere[$mischiaArray];
-
+      $mischiaArray = rand (1,$arrayLettereLunghezza);
+      $arrayCodice[] = $arrayLettere[$mischiaArray];
     }
+    for ($i=0; $i <3 ; $i++) {
+      $mischiaArrayNum = rand (1,$arrayNumeriLunghezza);
+      $arrayCodice[] = $arrayNumeri[$mischiaArrayNum];
+    }
+    echo "<pre>";
+
     var_dump($arrayCodice);
+
+    echo "</pre>";
+
   }
 
  generaCodice($arrayLettere,$arrayNumeri);
