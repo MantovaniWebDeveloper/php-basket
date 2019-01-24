@@ -19,14 +19,36 @@
       $mischiaArrayNum = rand (1,$arrayNumeriLunghezza);
       $arrayCodice[] = $arrayNumeri[$mischiaArrayNum];
     }
-    echo "<pre>";
+  /*  echo "<pre>";
 
     var_dump($arrayCodice);
 
-    echo "</pre>";
+    echo "</pre>";*/
+
+    $codiceStringa = implode("",$arrayCodice);
+
+    return $codiceStringa;
 
   }
 
- generaCodice($arrayLettere,$arrayNumeri);
+    generaCodice($arrayLettere,$arrayNumeri);
 
+
+    //genero aun array di oggeti con 100 oggetti giocatori basket
+    for ($i = 0; $i <= 100; $i++) {
+      $nuovoGiocatore = [
+        //ad ogni giocatore di basket vanno assciate
+        //queste propietà
+        //Codice giocatore univoco(formato da 3 lettere maiuscole
+        //casuali e tre numeri)
+        "codiceUnivoco" => generaCodice($arrayNumeri,$arrayLettere),
+        //"puntiRealizzati" : numeroRandom(2,50),
+        //"rimbalzi" : numeroRandom(1,25),
+        //"falli" : numeroRandom(1,10)
+      ];
+      $legaBasket[] = $nuovoGiocatore;
+    }
+     echo "<pre>";
+    var_dump($legaBasket);
+    echo "</pre>";
  ?>
