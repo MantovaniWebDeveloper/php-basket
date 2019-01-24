@@ -4,33 +4,7 @@
   $arrayNumeri = [0,1,2,3,4,5,6,7,8,9];
   $legaBasket = [];
 
-
- function generaCodice($arrayLettere,$arrayNumeri){
-
-    $arrayCodice = [];
-    $arrayLettereLunghezza = count($arrayLettere) -1;
-    $arrayNumeriLunghezza = count($arrayNumeri) -1;
-
-    for ($i=0; $i <3 ; $i++) {
-      $mischiaArray = rand (1,$arrayLettereLunghezza);
-      $arrayCodice[] = $arrayLettere[$mischiaArray];
-    }
-    for ($i=0; $i <3 ; $i++) {
-      $mischiaArrayNum = rand (1,$arrayNumeriLunghezza);
-      $arrayCodice[] = $arrayNumeri[$mischiaArrayNum];
-    }
-  /*  echo "<pre>";
-
-    var_dump($arrayCodice);
-
-    echo "</pre>";*/
-
-    $codiceStringa = implode("",$arrayCodice);
-
-    return $codiceStringa;
-
-  }
-
+  include "functions.php";
 
     //genero aun array di oggeti con 100 oggetti giocatori basket
     for ($i = 0; $i <= 100; $i++) {

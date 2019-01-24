@@ -1,31 +1,29 @@
 <?php
-//funzione generatore Codice
-function generaCodice($arrayNumeri,$arrayLettere){
+  function generaCodice($arrayLettere,$arrayNumeri){
 
-  $codiceToString = "";
-  $arrayCodice = [];
-/*  $arrayLettereLunghezza = count($arrayLettere - 1);
-  $arrayNumeriLunghezza = count($arrayNumeri - 1); */
+   $arrayCodice = [];
+   $arrayLettereLunghezza = count($arrayLettere) -1;
+   $arrayNumeriLunghezza = count($arrayNumeri) -1;
 
-  for ($i = 0; $i < 3; $i++) {
-    /*$mischiaArray = (floor((Math.random()*$arrayLettereLunghezza)+1));
-    $miachiArray = (floor(rand ( int $min , int $max )))*/
-    shuffle($arrayLettere);
+   for ($i=0; $i <3 ; $i++) {
+     $mischiaArray = rand (1,$arrayLettereLunghezza);
+     $arrayCodice[] = $arrayLettere[$mischiaArray];
+   }
+   for ($i=0; $i <3 ; $i++) {
+     $mischiaArrayNum = rand (1,$arrayNumeriLunghezza);
+     $arrayCodice[] = $arrayNumeri[$mischiaArrayNum];
+   }
+ /*  echo "<pre>";
 
-    $arrayCodice = $arrayLettere;
-  }
-  for ($i = 0; $i < 3; $i++) {
-  /*  $mischiaArrayNum = (Math.floor((Math.random()*$arrayNumeriLunghezza)+1));
-    $arrayCodice.push($arrayNumeri[mischiaArrayNum]);*/
-    shuffle($arrayNumeri);
-    $arrayCodice = $arrayNumeri;
+   var_dump($arrayCodice);
 
-  }
-  var_dump($codiceToString);
-  $codiceToString = implode(",", $arrayCodice);
+   echo "</pre>";*/
 
-  return $codiceToString;
-}
+   $codiceStringa = implode("",$arrayCodice);
+
+   return $codiceStringa;
+
+ }
 
 
  ?>
