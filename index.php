@@ -6,5 +6,6 @@
   </head>
   <body>
     <?php include "db.php"; ?>
+    <?php   ?>
   </body>
 </html>
